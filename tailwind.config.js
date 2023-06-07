@@ -7,11 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        Rossans: ["Rossans"],
+        Poppins: ["Poppins"],
+        Open: ["Open Sans"],
+        Garamond: ["Eb Garamond"],
+        Nunito: ["Nunito"],
       },
+      colors: {
+        primary: "#003560",
+        secondary: "#E6F44C",
+      },
+      visibility: ["group-hover"],
+      
     },
   },
   plugins: [],
