@@ -38,7 +38,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body className={`z-30 flex min-h-screen flex-col overflow-x-hidden ${navCheck ? 'overflow-y-hidden':'overflow-x-hidden'}`}>
+      <body className={`z-30 flex min-h-screen flex-col overflow-x-hidden ${navCheck ? 'md:overflow-y-hidden':'overflow-x-hidden'}`}>
         <div className="z-30">
           <Navbar navbarcheck={setnavCheck} />
         </div>
