@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Jumbotron(props: { title: string , Image: any}) {
   return (
     <div className="">
-        <div className="z-20 md:section md:h-fit md:w-full w-screen  flex flex-col justify-center content-center text-white mx-auto ">
+        <div className="z-20 md:section md:h-fit h-[93vh] md:w-full w-screen  flex flex-col justify-center content-center text-white mx-auto ">
             <div className="z-0 h-[93vh] rounded-b-[85px] bg-slate-900 bg-gradient-to-bl from-black to-transparent ">
                 
                 <Image
@@ -15,7 +15,7 @@ export default function Jumbotron(props: { title: string , Image: any}) {
                 fill={true}
                 className="object-cover w-full h-full rounded-b-[50px] z-0 "
                 />
-                <div className="bottom-10 z-20 relative h-[105vh] lg:h-[106vh] rounded-b-[60px] bg-gradient-to-b from-transparent to-slate-900">
+                <div className="bottom-10 z-20 relative h-[93vh] md:h-[106vh] rounded-b-[60px] bg-gradient-to-b from-transparent to-slate-900">
                 </div>
             </div>
             
