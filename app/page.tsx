@@ -3,7 +3,7 @@ import Jumbotron from '@/components/homepage/Jumbotron'
 import HeroModal from '@/components/homepage/HeroModal'
 import Messages from '@/components/homepage/Messages'
 import EventsCarousel from '@/components/homepage/EventsCarousel'
-import welcome from '../assets/homePage/Welcome.webp'
+import welcome from '../assets/homePage/Welcome.jpg'
 
 export default function Home() {
   return (

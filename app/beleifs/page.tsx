@@ -3,7 +3,7 @@ import IntroText from "@/components/BeleifsComponents/IntroText";
 import AccordionsTenets from '@/components/BeleifsComponents/AccordionsTenets';
 import Accordionsbeleifs from '@/components/BeleifsComponents/AccordionsBeleifs';
 import Jumbotron from '@/components/homepage/Jumbotron';
-import img from '../../assets/beleif/Ourbeliefs.webp'
+import img from '../../assets/beleif/Ourbeliefs.jpg'
 export default function beleifs() {
   return (
     <div>
