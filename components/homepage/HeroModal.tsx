@@ -15,8 +15,8 @@ const HeroModal = () => {
     AOS.init();
   }, [])
   return (
-    <div className="z-10 bg-white mt-10 md:mt-44 lg:mt-72 pb-72 rounded-b-[85px] md:justify-around h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white " >
-      <div className="z-20 lg:min-w-[50vw] lg:relative  flex flex-col items-center justify-center absolute content-center space-y-10 ">
+    <div className="z-10 bg-white mt-10 md:mt-44 lg:mt-72 lg:pb-72 rounded-b-[85px] md:justify-around h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white " >
+      <div className="z-20 lg:min-w-[50vw] lg:relative  flex flex-col items-center justify-center  absolute  md:content-center space-y-10 ">
         <h1 className="font-Barlow text-bold text-6xl lg:text-8xl text-white lg:text-black " data-aos="fade-up" data-aos-duration="1000" >Welcome to</h1>
         <h1 className="font-Barlow text-bold text-6xl lg:text-8xl text-white lg:text-primary" data-aos="fade-up" data-aos-duration="1000" >PIWC Kaneshie</h1>
         <p className="italic leading-loose text-lg font-base text-center  text-white lg:text-primary" data-aos="fade-up" data-aos-duration="1000" >A missionary wing of the Church Of Pentecost</p>

@@ -8,7 +8,7 @@ import welcome from '../assets/homePage/Welcome.jpg'
 export default function Home() {
   return (
     <main className=''>
-      <div className="z-20">
+      <div className="z-20 ">
         <Jumbotron title="WELCOME" Image={welcome}></Jumbotron>
       </div>
       <div className="bg-slate-900 z-10">
