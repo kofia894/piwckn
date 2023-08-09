@@ -4,27 +4,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import required modules
 import { Autoplay, Pagination,Navigation } from "swiper";
 
 import Image from "next/image";
-import Img1 from "../../assets/homePage/event1.jpeg";
-import Img2 from "../../assets/homePage/event2.jpg";
+import Img1 from "../../assets/homePage/event.jpg";
 
 export default function UpcomingEvents() {
   return (
     <>
-    <div className="mt-20">
-      <div className="p-4 flex flex-col items-center space-y-2">  
-        <h1 className="font-medium lg:text-3xl text-xl italic text-primary " data-aos="fade-up" data-aos-duration="1000"  >Upcoming Events
+    <div className="mt-20  bg-primary rounded-t-[85px]">
+      <div className="p-14 flex flex-col space-y-2">  
+        <h1 className="font-Barlow md:text-7xl text-5xl text-white " data-aos="fade-up" data-aos-duration="1000">Upcoming Events
         </h1>
-        <div data-aos="fade-up" data-aos-duration="1000" 
-        className="yellowline bg-secondary w-40 h-0.5 rounded-full ml-20">
-        </div>       
       </div> 
       <div  data-aos="fade-up" data-aos-duration="1000"  >
         <Swiper
@@ -38,13 +32,13 @@ export default function UpcomingEvents() {
           modules={[Pagination, Navigation]}
         >
           <SwiperSlide>
-            <div className="w-full flex justify-center items-center py-10">
+            <div className="w-full flex justify-center items-center pb-24">
               <Image
-                src={Img2}
+                src={Img1}
                 alt="upcoming event"
                 width={500}
                 height={500}
-                className="object-cover " />
+                className="object-cover rounded-[50px]" />
             </div>
           </SwiperSlide>
         </Swiper>

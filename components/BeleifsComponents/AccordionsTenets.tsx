@@ -26,21 +26,33 @@ export default function AccordionsTenets() {
 
  
   return (
-    <Fragment>
-      <div className="flex justify-center p-5 mt-10 mb-20 w-full">
-        <h1 className="text-primary font-bold text-4xl">11 Tenents</h1>      
+    <div className="section lg:mt-96 mt-[350px] lg:justify-around w-screen h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white mb-96 lg:mb-1">
+      <div className=" flex lg:hidden justify-center p-5  lg:w-[30%] ">
+          <h1 className="font-Barlow lg:text-9xl text-7xl font-black text-black">
+            OUR 11 TENETS{" "}
+          </h1>
       </div>
-     { Tenets.map((tenet)=>
-      <Accordion open={open === tenet.id} className=" px-10 md:px-40 lg:px-96  mb-5" icon={<Icon id={tenet.id} open={open} />}>
-        <AccordionHeader onClick={() => handleOpen(tenet.id)} className="text-primary font-bold text-left">
-          {tenet.title} 
-        </AccordionHeader>
-        <AccordionBody className="font-base">
-         {tenet.desc}
-        </AccordionBody>
-        <div className="border-b border-gray-800 rounded"></div>
-      </Accordion>
-      )}
-    </Fragment>
+      <div className="lg:w-[50%] flex flex-col justify-items-center items-center">
+        <Fragment>
+        { Tenets.map((tenet)=>
+          <Accordion open={open === tenet.id} className=" mb-16" icon={<Icon id={tenet.id} open={open} />}>
+            <AccordionHeader onClick={() => handleOpen(tenet.id)} className="font-Barlow md:text-2xl text-primary font-bold text-left">
+              {tenet.title} 
+            </AccordionHeader>
+            <AccordionBody className="font-normal space-y-2 text-lg text-black pt-5">
+            {tenet.desc}
+            </AccordionBody>
+           
+          </Accordion>
+          )}
+        </Fragment>
+      </div>
+
+      <div className="hidden lg:flex justify-center p-5  lg:w-[30%] ">
+          <h1 className="font-Barlow lg:text-9xl font-black text-black">
+            OUR 11 TENETS{" "}
+          </h1>
+      </div>
+    </div>
   );
 }

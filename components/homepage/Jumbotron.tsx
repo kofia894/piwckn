@@ -1,20 +1,27 @@
+"use client"
 import React from 'react'
+import Image from "next/image";
 
-export default function Jumbotron() {
+
+export default function Jumbotron(props: { title: string , Image: any}) {
   return (
-    <div>
-        <div className=" md:h-fit md:w-full w-screen flex flex-col justify-center content-center text-white mx-auto ">
-            <div className=" bg-slate-900  blur-[1px] brightness-[0.7] bg-gradient-to-bl from-black to-transparent">
-                <video  autoPlay muted loop  className=" w-full h-screen object-cover " >         
-                    <source src="./homepvid.MP4" type="video/mp4"/>       
-                </video>
+    <div className="">
+        <div className="z-20 md:section md:h-fit md:w-full w-screen  flex flex-col justify-center content-center text-white mx-auto ">
+            <div className="z-0 h-[93vh] rounded-b-[85px] bg-slate-900 bg-gradient-to-bl from-black to-transparent ">
+                
+                <Image
+                src={props.Image}
+                alt=""
+                fill={true}
+                className="object-cover w-full h-full rounded-b-[50px] z-0 "
+                />
+                <div className="bottom-10 z-20 relative h-[105vh] lg:h-[106vh] rounded-b-[60px] bg-gradient-to-b from-transparent to-slate-900">
+                </div>
             </div>
-            <div className="absolute content-center w-full text-center space-y-5">
-                <h1 className="hide md:text-4xl text-xl font-bold italic"  data-aos="fade-up" data-aos-duration="1000"  >
-                Pentecost International Worship Center Kaneshie
-                </h1>
-                <h1 className="hide md:text-xl text-md font-bold  " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                The Church of Pentecost  
+            
+            <div className="z-20 absolute bottom-16 lg:bottom-10 md:bottom-18 content-center w-full text-center space-y-5">
+                <h1 className=" font-Barlow hide text-7xl md:text-9xl lg:text-[250px] font-black "  data-aos="fade-up" data-aos-duration="1000"  >
+                {props.title}
                 </h1>
             </div>
         </div> 

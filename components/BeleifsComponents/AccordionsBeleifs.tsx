@@ -23,24 +23,28 @@ export default function Accordionsbeleifs() {
   const handleOpen = (value: SetStateAction<number>) => {
     setOpen(open === value ? 0 : value);
   };
-
  
   return (
-    <Fragment>
-      <div className="flex justify-center p-5 mt-10 mb-20 w-full">
-        <h1 className="text-primary font-bold text-4xl">Core Values</h1>      
+    <div className="section lg:mt-[600px] lg:justify-around w-screen h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white">
+      <div className=" flex justify-center p-5  lg:w-[30%] ">
+          <h1 className="font-Barlow lg:text-9xl text-7xl font-black text-black">
+            OUR CORE VALUES{" "}
+          </h1>
       </div>
-     { Beleifs.map((beleif)=>
-      <Accordion open={open === beleif.id} className=" px-10 md:px-40 lg:px-96  mb-5" icon={<Icon id={beleif.id} open={open} />}>
-        <AccordionHeader onClick={() => handleOpen(beleif.id)} className="text-primary font-bold text-left">
-          {beleif.title} 
-        </AccordionHeader>
-        <AccordionBody className="font-base">
-         {beleif.desc}
-        </AccordionBody>
-        <div className="border-b border-gray-800 rounded"></div>
-      </Accordion>
-      )}
-    </Fragment>
+      <div className="lg:w-[50%] flex flex-col justify-items-center items-center">
+          <Fragment>
+          { Beleifs.map((beleif)=>
+            <Accordion open={open === beleif.id} className="mb-16" icon={<Icon id={beleif.id} open={open} />}>
+              <AccordionHeader onClick={() => handleOpen(beleif.id)} className="font-Barlow md:text-2xl text-primary font-bold text-left">
+                {beleif.title}
+              </AccordionHeader>
+              <AccordionBody className="font-normal space-y-2 text-lg text-black pt-5">
+              {beleif.desc}
+              </AccordionBody>
+            </Accordion>
+            )}
+          </Fragment>
+      </div>
+    </div>
   );
 }

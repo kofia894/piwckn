@@ -8,17 +8,33 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Rossans: ["Rossans"],
+        "Rossans": ["Rossans"],
         Poppins: ["Poppins"],
-        Open: ["Open Sans"],
-        Garamond: ["Eb Garamond"],
-        Nunito: ["Nunito"],
+        "Open": ["Open Sans"],
+        "Garamond": ["Eb Garamond"],
+        "Nunito": ["Nunito"],
+        "Barlow":["Barlow Condensed"]
       },
       colors: {
         primary: "#003560",
         secondary: "#E6F44C",
       },
       visibility: ["group-hover"],
+
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+      },
       
     },
   },
