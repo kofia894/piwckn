@@ -8,7 +8,7 @@ export default function Jumbotron(props: { title: string , Image: any}) {
     <div className="">
         <div className="first z-20 md:section  h-screen md:h-[950px] lg:h-[900px] md:w-full w-screen  flex flex-col justify-center content-center text-white mx-auto ">
             
-                <div className="bg-slate-900 rounded-b-[85px] h-screen md:h-[950px] lg:h-[900px] z-20">
+                <div className="bg-slate-900 md:rounded-b-[85px] h-screen md:h-[950px] lg:h-[900px] z-20">
                   <div className="overlay top-10 lg:top-0 bottom-0 lg z-30 relative h-screen md:h-[990px] lg:h-[900px] md:rounded-b-[85px] bg-gradient-to-b from-transparent to-slate-900">
                   </div>
                   <Image
