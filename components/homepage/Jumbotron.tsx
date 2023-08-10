@@ -22,7 +22,7 @@ export default function Jumbotron(props: { title: string , Image: any}) {
             
             
             <div className="title z-20 absolute bottom-16 lg:bottom-10 md:bottom-18 content-center w-full text-center space-y-5">
-                <h1 className=" font-Barlow hide text-7xl md:text-9xl lg:text-[250px] font-black "  data-aos="fade-up" data-aos-duration="1000"  >
+                <h1 className=" font-Barlow hide text-8xl md:text-9xl lg:text-[250px] font-black "  data-aos="fade-up" data-aos-duration="1000"  >
                 {props.title}
                 </h1>
             </div>
