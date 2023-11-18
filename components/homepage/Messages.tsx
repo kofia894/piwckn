@@ -12,9 +12,9 @@ export default function Messages(){
     
     return(
         <>
-        <div className=" bg-slate-900 md:justify-around h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white " >
+        <div className=" bg-slate-900 md:justify-around h-[50vh] md:h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white " >
             <div className="marquee w-screen relative flex text-white items-center overflow-x-hidden overflow-y-clip bg-slate-900">
-                <div className=" animate-marquee whitespace-nowrap p-0 text-7xl font-extrabold">
+                <div className=" animate-marquee whitespace-nowrap p-0 text-xl md:text-7xl font-extrabold">
                     <span className="mx-4"> Marathon Prayer Start at 7:30AM </span>
                     <span className="mx-4 font-black text-secondary">-</span>
                     <span className="mx-4">Church Service Starts at 8:00 AM</span>
@@ -23,7 +23,7 @@ export default function Messages(){
                     <span className="mx-4 font-black text-secondary">-</span>
                     
                 </div>
-                <div className="absolute p-0 animate-marquee2 whitespace-nowrap text-7xl font-extrabold">
+                <div className="absolute p-0 animate-marquee2 whitespace-nowrap text-xl md:text-7xl font-extrabold">
                 <span className="mx-4"> Marathon Prayer Start at 7:30AM </span>
                     <span className="mx-4 font-black text-secondary">-</span>
                     <span className="mx-4">Church Service Starts at 8:00 AM</span>

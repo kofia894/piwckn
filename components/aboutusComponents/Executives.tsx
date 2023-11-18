@@ -55,7 +55,7 @@ const data = [
 export default function Executives() {
   return (
     <>
-      <div className="py-40 w-screen min-h-screen bg-slate-900 rounded-t-[85px] lg:rounded-[85px] flex flex-col items-center justify-center mt-20">
+      <div className="py-40 w-screen min-h-screen bg-slate-900 rounded-t-[30px] md:rounded-t-[85px] lg:rounded-[85px] flex flex-col items-center justify-center mt-20">
         <h1 className=" font-Barlow text-white font-bold lg:text-8xl text-6xl  mb-20">
           Executives
         </h1>

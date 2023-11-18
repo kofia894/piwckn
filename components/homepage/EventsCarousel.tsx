@@ -15,7 +15,7 @@ import Img1 from "../../assets/homePage/event.jpg";
 export default function UpcomingEvents() {
   return (
     <>
-    <div className="mt-20  bg-primary rounded-t-[85px]">
+    <div className="mt-20  bg-primary md:rounded-t-[85px]">
       <div className="p-14 flex flex-col space-y-2">  
         <h1 className="font-Barlow md:text-7xl text-5xl text-white " data-aos="fade-up" data-aos-duration="1000">Upcoming Events
         </h1>

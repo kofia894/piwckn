@@ -7,16 +7,17 @@ export default function Jumbotron(props: { title: string , Image: any}) {
   return (
     <div className="">
         <div className="first z-20 md:section  h-screen md:h-[950px] lg:h-[900px] md:w-full w-screen  flex flex-col justify-center content-center text-white mx-auto ">
-            
-                <div className="bg-slate-900 md:rounded-b-[85px] h-screen md:h-[950px] lg:h-[900px] z-20">
-                  <div className="overlay top-10 lg:top-0 bottom-0 lg z-30 relative h-screen md:h-[990px] lg:h-[900px] md:rounded-b-[85px] bg-gradient-to-b from-transparent to-slate-900">
-                  </div>
+                <div className=" md:rounded-b-[85px] h-screen md:h-[950px] lg:h-[900px] z-20">
+                  {/* <div className="overlay top-10 lg:top-0 bottom-0 lg z-30 relative h-screen md:h-[950px] lg:h-[900px] md:rounded-b-[85px] bg-gradient-to-b from-transparent to-slate-900">
+                  </div> */}
                   <Image
                   src={props.Image}
                   alt=""
                   fill={true}
-                  className="object-cover w-full h-full md:rounded-b-[85px] z-10 "
+                  className="object-cover w-full h-full md:rounded-b-[85px] z-10 bg-[linear-gradient(0deg,rgba(15,23,42,0.9)_6.82%,rgba(15,23,42,0.00)_81.44%)]"
                   />
+                  <div className="md:rounded-b-[85px] z-30 absolute w-full h-full bg-[linear-gradient(0deg,rgba(15,23,42,0.9)_10%,rgba(15,23,42,0.00)_81.44%)]">
+                  </div>
                 </div>
                 
             

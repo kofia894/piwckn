@@ -4,7 +4,7 @@ import { BsFillCameraVideoFill } from "react-icons/bs";
 export default function Footer() {
   return (
     <>
-      <footer className="fixed bottom-0 z-30 flex w-screen h-[7vh]  items-center justify-center  ">
+      <footer className="fixed bottom-0 z-40 flex w-screen h-[7vh]  items-center justify-center  ">
         <div className="bg-slate-900 h-[7vh] w-[98vw] lg:w-[90vw] rounded-lg flex justify-between px-10">
           <div className=" flex items-center h-full text-white space-x-3">
             <p className="border-r-2 lg:w-26 pr-4 text-sm lg:text-base">SUNDAY SERVICE</p>

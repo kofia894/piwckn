@@ -26,7 +26,7 @@ export default function AccordionsTenets() {
 
  
   return (
-    <div className="section lg:mt-96 mt-[350px] lg:justify-around w-screen h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white mb-96 lg:mb-1">
+    <div className="section lg:mt-96 mt-[350px] lg:justify-around w-screen min-h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white mb-96 lg:mb-1">
       <div className=" flex lg:hidden justify-center p-5  lg:w-[30%] ">
           <h1 className="font-Barlow lg:text-9xl text-7xl font-black text-black">
             OUR 11 TENETS{" "}

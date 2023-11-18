@@ -31,7 +31,7 @@ const handleOpen = (value: SetStateAction<number>) => {
   return (
     <div>
       <div className="section md:justify-around w-screen h-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white">
-        <div className="w-[30%] lg:relative z-40 flex flex-col mb-10">
+        <div className="w-[30%] lg:relative z-30 flex flex-col mb-10">
           <h1 className="font-Barlow lg:text-9xl md:text-7xl text-5xl font-black text-black">
             OTHER WAYS{" "}
           </h1>

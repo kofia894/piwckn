@@ -48,7 +48,7 @@ export default function Navbar({navbarcheck}: {navbarcheck: any}){
                     </button>}
                 </div>
             </div>}
-            {navisOpen && <div className="z-30  md:pl-24 lg:pr-10 h-screen w-screen flex md:flex-row md:justify-between justify-center lg:items-center md:items-start bg-primary">
+            {navisOpen && <div className="z-30  md:pl-24 lg:pr-10 h-screen w-screen flex md:flex-row md:justify-between justify-center md:pt-16 md:items-start bg-primary">
                 <ul className="w-full md:w-[60%] flex flex-col space-y-16 md:space-y-20 font-Barlow text-white md:text-6xl text-4xl text-center md:text-left md:rounded md:border-r-4 md:pr-10 lg:pr-0 pt-16 md:pt-0 pl-32 md:pl-0">
                     <li onClick={handleClick}><Link href="/"><p className="hover:text-secondary">Home</p></Link> </li>
                     <li onClick={handleClick}><Link href="/aboutUs"><p className="hover:text-secondary">About Us</p></Link> </li>

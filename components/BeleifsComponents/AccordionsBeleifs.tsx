@@ -25,7 +25,7 @@ export default function Accordionsbeleifs() {
   };
  
   return (
-    <div className="section lg:mt-[600px] lg:justify-around w-screen h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white">
+    <div className="section lg:mt-[600px] lg:justify-around w-screen min-h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white">
       <div className=" flex justify-center p-5  lg:w-[30%] ">
           <h1 className="font-Barlow lg:text-9xl text-7xl font-black text-black">
             OUR CORE VALUES{" "}
