@@ -3,6 +3,7 @@ import PE from "../../assets/AboutUs/PE_Kwaku.jpg";
 import Ex1 from "../../assets/AboutUs/EldYirebi.jpg";
 import Ex2 from "../../assets/AboutUs/EldMantey.jpg";
 import Ex3 from "../../assets/AboutUs/EldAmfo.jpg";
+import Ex4 from "../../assets/AboutUs/eldnoble.jpg";
 import Ex5 from "../../assets/AboutUs/MrsAsare.jpg";
 
 const data = [
@@ -47,7 +48,7 @@ const data = [
     id: 7,
     name: "Eld Noble Aduamah",
     role: "Executive Member",
-    img: Ex3,
+    img: Ex4,
   },
   
 ];
