@@ -8,8 +8,6 @@ import { Loader } from "@/components/Loader";
 import { useRouter } from "next/router";
 import { Suspense, useState } from "react";
 import { useEffect } from "react";
-import { Router } from "next/router";
-import NextNProgress from "nextjs-progressbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
