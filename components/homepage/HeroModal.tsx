@@ -25,7 +25,7 @@ const HeroModal = () => {
           <Image
               src={welcome2}
               alt=""
-              className="object-cover w-full h-fullz-10"
+              className="object-cover w-full h-full rounded-b-[50px] lg:rounded-[50px] z-10"
           />
       </div>
     </div>  
