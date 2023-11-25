@@ -5,6 +5,7 @@ import Ex2 from "../../assets/AboutUs/EldMantey.jpg";
 import Ex3 from "../../assets/AboutUs/EldAmfo.jpg";
 import Ex4 from "../../assets/AboutUs/eldnoble.jpg";
 import Ex5 from "../../assets/AboutUs/MrsAsare.jpg";
+import Ex0 from "../../assets/AboutUs/placeholderimg.png";
 
 const data = [
   {
@@ -21,36 +22,40 @@ const data = [
   },
   {
     id: 3,
-    name: "Dcns Evelyn Asare",
-    role: "Women's Ministry Leader",
-    img: Ex5,
+    name: "Eld Noble Aduamah",
+    role: "Executive Member",
+    img: Ex4,
   },
   {
     id: 4,
-    name: "Dcns Janet Sambi",
-    role: "Women's Ministry ",
-    img: Ex5,
-  },
-  {
-    id: 5,
-    name: "Eld Joseph Yirebi",
-    role: "Exeutive Member",
-    img: Ex1,
-  },
-  
-  {
-    id: 6,
     name: "Eld Paul Amfo",
     role: "Executive Member",
     img: Ex3,
   },
   {
-    id: 7,
-    name: "Eld Noble Aduamah",
+    id: 5,
+    name: "Eld Geoffrey Arthur",
     role: "Executive Member",
-    img: Ex4,
+    img: Ex0,
   },
-  
+  {
+    id: 5,
+    name: "Eld Kofi Obeng Yirebi",
+    role: "Exeutive Member",
+    img: Ex1,
+  },
+  {
+    id: 6,
+    name: "Dcns Evelyn Asare",
+    role: "Women's Ministry Leader",
+    img: Ex5,
+  },
+  {
+    id: 7,
+    name: "Dcns Janet Sambi",
+    role: "Women's Ministry ",
+    img: Ex0,
+  },
 ];
 
 export default function Executives() {
