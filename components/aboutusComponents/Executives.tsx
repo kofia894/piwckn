@@ -5,6 +5,7 @@ import Ex2 from "../../assets/AboutUs/EldMantey.jpg";
 import Ex3 from "../../assets/AboutUs/EldAmfo.jpg";
 import Ex4 from "../../assets/AboutUs/eldnoble.jpg";
 import Ex5 from "../../assets/AboutUs/MrsAsare.jpg";
+import Ex6 from "../../assets/AboutUs/dcnssambi.jpg";
 import Ex0 from "../../assets/AboutUs/placeholderimg.png";
 
 const data = [
@@ -54,7 +55,7 @@ const data = [
     id: 7,
     name: "Dcns Janet Sambi",
     role: "Women's Ministry ",
-    img: Ex0,
+    img: Ex6,
   },
 ];
 
