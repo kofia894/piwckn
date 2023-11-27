@@ -33,23 +33,23 @@ export default function UpcomingEvents() {
           modules={[Pagination, Navigation]}
         >
           <SwiperSlide>
-            <div className="w-full flex justify-center items-center pb-24 ">
+            <div className="w-full flex justify-center items-center pb-24">
               <Image
                 src={Img1}
                 alt="upcoming event"
                 width={500}
                 height={500}
-                className="object-cover  h-full w-full rounded-[50px]" />
+                className="object-cover rounded-[50px]" />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-full flex justify-center items-center pb-24 ">
+            <div className="w-full flex justify-center items-center pb-24">
               <Image
                 src={Img2}
                 alt="upcoming event"
                 width={500}
                 height={500}
-                className="object-cover  rounded-[50px] h-full w-full" />
+                className="object-cover rounded-[50px]" />
             </div>
           </SwiperSlide>
         </Swiper>
