@@ -75,7 +75,7 @@ export default function Executives() {
               <div className="  ">
                 <Image
                   src={item.img}
-                  alt="Logo of Youth Ministry"
+                  alt="exectives"
                   layout="fill"
                   objectFit="cover"
                   className="object-fill  absolute w-full h-full  transform bg-center bg-cover group-hover:brightness-50 group-hover:blur-[1px]  transition delay-100 duration-300 ease-in-out "
