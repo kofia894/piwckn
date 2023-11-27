@@ -9,7 +9,7 @@ export const MissionVission = () => {
       <div className="  lg:section md:justify-around h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center lg:m-24">
         <div className="lg:max-w-[50vw] lg:relative lg:flex flex-col items-center justify-center absolute grid content-center">
           <h1 className='z-40 mb-4 lg:text-9xl text-5xl font-Barlow font-extrabold text-center lg:text-primary text-white' data-aos="fade-up" data-aos-duration="1000" > Our Mission</h1>
-          <h2 className="z-40 mb-4 lg:text-3xl text-xl font-light text-center text-white lg:text-primary italic px-3 lg:w-[80%]" data-aos="fade-up" data-aos-duration="1000" >"We exist to establish responsible and self-sustaining churches filled with committed,
+          <h2 className="z-40 mb-4 lg:text-3xl text-xl font-light text-center text-white lg:text-primary italic px-3 lg:w-[80%]" data-aos="fade-up" data-aos-duration="1000" >"We exist to establish a responsible and self-sustaining church filled with committed,
             Spirit-filled Christians of sound character, who will impact their communities
             "</h2>
         </div>

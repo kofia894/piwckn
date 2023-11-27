@@ -11,6 +11,7 @@ import { Autoplay, Pagination,Navigation } from "swiper";
 
 import Image from "next/image";
 import Img1 from "../../assets/homePage/event.jpg";
+import Img2 from "../../assets/homePage/event1.jpg";
 
 export default function UpcomingEvents() {
   return (
@@ -22,7 +23,7 @@ export default function UpcomingEvents() {
       </div> 
       <div  data-aos="fade-up" data-aos-duration="1000"  >
         <Swiper
-          slidesPerView={1}
+          slidesPerView={2}
           spaceBetween={30}
           loop={true}
           pagination={{
@@ -35,6 +36,16 @@ export default function UpcomingEvents() {
             <div className="w-full flex justify-center items-center pb-24">
               <Image
                 src={Img1}
+                alt="upcoming event"
+                width={500}
+                height={500}
+                className="object-cover rounded-[50px]" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="w-full flex justify-center items-center pb-24">
+              <Image
+                src={Img2}
                 alt="upcoming event"
                 width={500}
                 height={500}
