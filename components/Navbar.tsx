@@ -1,142 +1,196 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from "next/image";
-import Logo from '../assets/logoFolder/COPlogotrans.png'
 import Logo2 from '../assets/logoFolder/RectangleLogo.png'
-import { BsFacebook, BsFillTelephoneOutboundFill } from "react-icons/bs";
-import { AiFillInstagram, AiFillMail, AiOutlineTwitter } from "react-icons/ai";
-import { BsFillCameraVideoFill } from "react-icons/bs";
-import { ImLocation2 } from "react-icons/im";
-import { FaTiktok} from "react-icons/fa";
-import { RxHamburgerMenu} from "react-icons/rx";
-import { RxCross1} from "react-icons/rx";
+import { BsFacebook } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaTiktok } from "react-icons/fa";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from "motion/react";
 
+export default function Navbar({ navbarcheck }: { navbarcheck: any }) {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
+    const navLinks = [
+        { href: '/', label: 'Home' },
+        { href: '/aboutUs', label: 'About Us' },
+        { href: '/beleifs', label: 'Our Beliefs' },
+        { href: '/giving', label: 'Giving' },
+    ];
 
-export default function Navbar({navbarcheck}: {navbarcheck: any}){
-    const [navisOpen, setnavOpen] = useState(false);
+    const socialLinks = [
+        { href: 'https://www.instagram.com/piwckaneshie/', icon: AiFillInstagram, label: 'Instagram' },
+        { href: 'https://www.tiktok.com/@piwckn', icon: FaTiktok, label: 'TikTok' },
+        { href: 'https://web.facebook.com/PIWCKaneshie', icon: BsFacebook, label: 'Facebook' },
+    ];
 
-    const handleClick = () => {
-        setnavOpen(current => !current);
-    };
-
-    useEffect(()=>{
-        navbarcheck(navisOpen);
-    },[navisOpen])
-    
     return (
-        <>
-        <nav>
-            {navisOpen && <div className="z-30 md:pt-10 pl-24 pr-10 flex flex-row justify-between w-full lg:top-0 lg:w-screen bg-primary" >
-                <div className="logo p-3 ">
-                    <Link href="/">
-                        <Image
-                            src={Logo2}
-                            alt="Logo of COP global"
-                            width={150}
-                            height={100}
-                        />
-                    </Link>
-                </div>
-                <div>
-                    {!navisOpen &&<button className="p-3" onClick={handleClick}>
-                        <RxHamburgerMenu  size={30}/>
-                    </button>}
-                    {navisOpen &&<button className="p-3 text-white flex items-center space-x-3" onClick={handleClick}>
-                        <p className="">CLOSE</p><RxCross1  size={30}/>
-                    </button>}
-                </div>
-            </div>}
-            {navisOpen && <div className="z-30  md:pl-24 lg:pr-10 h-screen w-screen flex md:flex-row md:justify-between justify-center md:pt-16 md:items-start bg-primary">
-                <ul className="w-full md:w-[60%] flex flex-col space-y-16 md:space-y-20 font-Barlow text-white md:text-6xl text-4xl text-center md:text-left md:rounded md:border-r-4 md:pr-10 lg:pr-0 pt-16 md:pt-0 pl-32 md:pl-0">
-                    <li onClick={handleClick}><Link href="/"><p className="hover:text-secondary">Home</p></Link> </li>
-                    <li onClick={handleClick}><Link href="/aboutUs"><p className="hover:text-secondary">About Us</p></Link> </li>
-                    <li onClick={handleClick}><Link href="/beleifs"><p className="hover:text-secondary">Our Beliefs</p></Link> </li>
-                    <li onClick={handleClick}><Link href="/giving"><p className="hover:text-secondary">Giving</p></Link> </li>
-                </ul>
-                <ul className="flex flex-col space-y-5 w-full justify-start px-10 font-Barlow text-white md:text-6xl text-left hover:text-secondary">
-                
-                <div className="hidden md:flex w-full flex-col lg:flex-row gap-6 mb-8">
-                    <div className="flex gap-4 items-center text-white">
-                        <BsFillTelephoneOutboundFill size={20} />
-                        <span className="lg:text-lg text-xl text-white">+233 24 348 3905</span>
-                        </div>
-                        <div className="flex gap-4 items-center text-white">
-                        <AiFillMail size={20} />
-                        <span className="lg:text-lg text-xl text-white">piwckaneshiemedia@gmail.com</span>
-                        </div>
-                        <div className="flex gap-4 items-center text-white">
-                        <ImLocation2 size={20} />
-                        <span className="lg:text-lg text-xl text-white">PIWC Kaneshie Sakatsuru St, Accra</span>
-                        </div>
-                    </div>
-
-                    <div className="hidden md:flex w-full items-center top-10 ">
-                        <div className="h-[200px] md:h-[200px] w-[700px]">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3970.96329875982!2d-0.2506739!3d5.5724447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf99c52c30a95f%3A0x51887407cf9577db!2sPIWC%20Kaneshie!5e0!3m2!1sen!2sgh!4v1671199268296!5m2!1sen!2sgh" 
-                            loading="lazy" className="h-[200px] md:h-[200px] lg:w-[700px]  "></iframe>
-                        </div>
-                    </div>
-                    <div className="hidden md:flex flex-col gap-10 mt-2 text-white">
-                        <a href="https://www.instagram.com/piwckaneshie/" className="flex items-center space-x-3"><AiFillInstagram size={30} /> <p className="text-4xl">Instagram</p></a>
-                        <a href="https://www.tiktok.com/@piwckn?_t=8b02DzuKGog&_r=1" className="flex items-center space-x-3"><FaTiktok size={30} /><p className="text-4xl">TikTok</p></a>
-                        <a className="flex items-center space-x-3" href="https://web.facebook.com/PIWCKaneshie">
-                        <BsFacebook size={30} /><p className="text-4xl">Facebook</p>
-                        </a>
-                </div>
-                </ul>
-                
-            </div>}
-            <div className="w-full z-30 text-white text-sm font-medium fixed pt-10">
-                
-                <div  className="hidden  lg:flex  flex-row w-full justify-center lg:justify-between space-x-10 pl-24 pr-10">
-                    <div className="logo pt-4 cursor-pointer">
-                        <Link href="/">
+        <motion.nav
+            className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 0.5,
+                ease: [0.43, 0.13, 0.23, 0.96]
+            }}
+        >
+            <div className="section">
+                <div className="flex items-center justify-between h-20">
+                    {/* Logo - Left */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.1,
+                            ease: [0.43, 0.13, 0.23, 0.96]
+                        }}
+                    >
+                        <Link href="/" className="flex-shrink-0">
                             <Image
                                 src={Logo2}
-                                alt="Logo of COP global"
-                                width={150}
-                                height={100}
-                                className="object-cover"
-                                
+                                alt="PIWC Kaneshie Logo"
+                                width={120}
+                                height={80}
+                                className="object-contain"
                             />
                         </Link>
-                    </div>
-                    <div onClick={handleClick} className=" bg-white w-40 h-16 rounded-full mt-3 shadow-lg">
-                        <div className=" text-black h-full w-full flex items-center justify-center space-x-3">
-                            <h1>MENU</h1>
-                            <RxHamburgerMenu  size={30}/>
-                        </div>
-                    </div>
-                </div>
-                <div className="z-30 flex flex-col w-full  ">
-                    {!navisOpen &&<div className=" visible lg:hidden flex flex-row justify-between w-full" >
-                        <div className="logo p-3 ">
-                            <Link href="/">
-                                <Image
-                                    src={Logo2}
-                                    alt="Logo of COP global"
-                                    width={150}
-                                    height={100}
-                                />
-                            </Link>
-                        </div>
-                        <div className='transition delay-100 duration-300 ease-in-out'>
-                            {!navisOpen &&<button className="p-3 transition delay-100 duration-300 ease-in-out" onClick={handleClick}>
-                                <RxHamburgerMenu  size={30}/>
-                            </button>}
-                            {navisOpen &&<button className="p-3 transition delay-100 duration-300 ease-in-out" onClick={handleClick}>
-                                < RxCross1  size={30}/>
-                            </button>}
-                           
+                    </motion.div>
 
-                        </div>
-                    </div>}
-                   
+                    {/* Navigation Links - Center (Desktop) */}
+                    <ul className="hidden md:flex items-center space-x-8">
+                        {navLinks.map((link, index) => (
+                            <motion.li
+                                key={link.href}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: 0.2 + index * 0.1,
+                                    ease: [0.43, 0.13, 0.23, 0.96]
+                                }}
+                            >
+                                <Link
+                                    href={link.href}
+                                    className={`font-Inter text-sm font-medium transition-colors hover:text-secondary ${
+                                        pathname === link.href ? 'text-secondary' : 'text-white'
+                                    }`}
+                                >
+                                    {link.label}
+                                </Link>
+                            </motion.li>
+                        ))}
+                    </ul>
+
+                    {/* Social Icons - Right (Desktop) */}
+                    <div className="hidden md:flex items-center space-x-4">
+                        {socialLinks.map((social, index) => (
+                            <motion.a
+                                key={social.label}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white hover:text-secondary transition-colors"
+                                aria-label={social.label}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: 0.6 + index * 0.1,
+                                    ease: [0.43, 0.13, 0.23, 0.96]
+                                }}
+                            >
+                                <social.icon size={20} />
+                            </motion.a>
+                        ))}
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <motion.button
+                        className="md:hidden p-2 text-white"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label="Toggle menu"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                            duration: 0.5,
+                            delay: 0.2,
+                            ease: [0.43, 0.13, 0.23, 0.96]
+                        }}
+                    >
+                        {mobileMenuOpen ? <RxCross1 size={24} /> : <RxHamburgerMenu size={24} />}
+                    </motion.button>
                 </div>
             </div>
-        </nav>
-        </>
-    )
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        className="md:hidden bg-black/30 backdrop-blur-md border-t border-white/10 overflow-hidden"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                            duration: 0.3,
+                            ease: [0.43, 0.13, 0.23, 0.96]
+                        }}
+                    >
+                        <div className="section py-4">
+                            <ul className="space-y-4">
+                                {navLinks.map((link, index) => (
+                                    <motion.li
+                                        key={link.href}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            delay: index * 0.1,
+                                            ease: [0.43, 0.13, 0.23, 0.96]
+                                        }}
+                                    >
+                                        <Link
+                                            href={link.href}
+                                            onClick={() => setMobileMenuOpen(false)}
+                                            className={`block font-Inter text-base font-medium py-2 transition-colors hover:text-secondary ${
+                                                pathname === link.href ? 'text-secondary' : 'text-white'
+                                            }`}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                            <motion.div
+                                className="flex items-center space-x-6 pt-4 mt-4 border-t border-white/10"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{
+                                    duration: 0.3,
+                                    delay: 0.4,
+                                    ease: [0.43, 0.13, 0.23, 0.96]
+                                }}
+                            >
+                                {socialLinks.map((social) => (
+                                    <a
+                                        key={social.label}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white hover:text-secondary transition-colors"
+                                        aria-label={social.label}
+                                    >
+                                        <social.icon size={24} />
+                                    </a>
+                                ))}
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.nav>
+    );
 }

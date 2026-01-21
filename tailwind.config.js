@@ -16,8 +16,8 @@ module.exports = {
         "Barlow":["Barlow Condensed"]
       },
       colors: {
-        primary: "#003560",
-        secondary: "#E6F44C",
+        primary: "#1B1B4F",
+        secondary: "#FECC09",
       },
       visibility: ["group-hover"],
 

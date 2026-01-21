@@ -32,18 +32,18 @@ const handleOpen = (value: SetStateAction<number>) => {
     <div>
       <div className="section md:justify-around w-screen h-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white">
         <div className="w-[30%] lg:relative z-30 flex flex-col mb-10">
-          <h1 className="font-Barlow lg:text-9xl md:text-7xl text-5xl font-black text-black">
+          <h1 className="font-Inter lg:text-9xl md:text-7xl text-5xl font-black text-black">
             OTHER WAYS{" "}
           </h1>
-          <h1 className="font-Barlow lg:text-9xl md:text-7xl text-5xl font-black text-black">
+          <h1 className="font-Inter lg:text-9xl md:text-7xl text-5xl font-black text-black">
             TO GIVE{" "}
           </h1>
         </div>
         <div className="w-[50%] flex flex-col justify-items-center items-center space-y-16">
           <Fragment>
               { Giving.map((giving)=>
-              <Accordion open={open === giving.id} className="font-Barlow md:text-2xl text-primary font-bold text-left" icon={<Icon id={giving.id} open={open} />}>
-                  <AccordionHeader onClick={() => handleOpen(giving.id)} className="font-Barlow md:text-2xl text-primary font-bold text-left">
+              <Accordion open={open === giving.id} className="font-Inter md:text-2xl text-primary font-bold text-left" icon={<Icon id={giving.id} open={open} />}>
+                  <AccordionHeader onClick={() => handleOpen(giving.id)} className="font-Inter md:text-2xl text-primary font-bold text-left">
                   {giving.title} 
                   </AccordionHeader>
                   <AccordionBody className="font-normal space-y-2 text-lg text-black pt-5">

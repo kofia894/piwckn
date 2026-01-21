@@ -40,21 +40,21 @@ const data = [
     img: Ex0,
   },
   {
-    id: 5,
+    id: 6,
     name: "Eld Kofi Obeng Yirebi",
-    role: "Exeutive Member",
+    role: "Executive Member",
     img: Ex1,
   },
   {
-    id: 6,
+    id: 7,
     name: "Dcns Evelyn Asare",
     role: "Women's Ministry Leader",
     img: Ex5,
   },
   {
-    id: 7,
+    id: 8,
     name: "Dcns Janet Sambi",
-    role: "Women's Ministry ",
+    role: "Women's Ministry",
     img: Ex6,
   },
 ];
@@ -63,7 +63,7 @@ export default function Executives() {
   return (
     <>
       <div className="py-40 w-screen min-h-screen bg-slate-900 rounded-t-[30px] md:rounded-t-[85px] lg:rounded-[85px] flex flex-col items-center justify-center mt-20">
-        <h1 className=" font-Barlow text-white font-bold lg:text-8xl text-6xl  mb-20">
+        <h1 className=" font-Inter text-white font-bold lg:text-8xl text-6xl  mb-20">
           Executives
         </h1>
         <div className=" slide grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 lg:gap-5 gap-5">
@@ -82,10 +82,10 @@ export default function Executives() {
                 />
               </div>
               <div className="absolute text-transparent grid content-center text-center space-y-4 group-hover:text-white ">
-                <h1 className="font-Barlow transition delay-150 duration-300 ease-in-out font-extrabold">
+                <h1 className="font-Inter transition delay-150 duration-300 ease-in-out font-extrabold">
                   {item.role}
                 </h1>
-                <h1 className="font-Barlow transition delay-150 duration-300 ease-in-out">
+                <h1 className="font-Inter transition delay-150 duration-300 ease-in-out">
                   {item.name}
                 </h1>
               </div>

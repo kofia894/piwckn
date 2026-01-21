@@ -27,7 +27,7 @@ export default function Accordionsbeleifs() {
   return (
     <div className="section lg:mt-[600px] lg:justify-around w-screen min-h-screen flex flex-col lg:flex-row md:content-center items-center justify-center text-white">
       <div className=" flex justify-center p-5  lg:w-[30%] ">
-          <h1 className="font-Barlow lg:text-9xl text-7xl font-black text-black">
+          <h1 className="font-Inter lg:text-9xl text-7xl font-black text-black">
             OUR CORE VALUES{" "}
           </h1>
       </div>
@@ -35,7 +35,7 @@ export default function Accordionsbeleifs() {
           <Fragment>
           { Beleifs.map((beleif)=>
             <Accordion open={open === beleif.id} className="mb-16" icon={<Icon id={beleif.id} open={open} />}>
-              <AccordionHeader onClick={() => handleOpen(beleif.id)} className="font-Barlow md:text-2xl text-primary font-bold text-left">
+              <AccordionHeader onClick={() => handleOpen(beleif.id)} className="font-Inter md:text-2xl text-primary font-bold text-left">
                 {beleif.title}
               </AccordionHeader>
               <AccordionBody className="font-normal space-y-2 text-lg text-black pt-5">

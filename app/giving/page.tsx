@@ -3,14 +3,14 @@ import IntroText from "@/components/GivingComponents/IntroText";
 import GiveText from '@/components/GivingComponents/GiveText';
 import HTG from '@/components/GivingComponents/HTG';
 import Giveinfo from '@/components/GivingComponents/Giveinfo';
-import Jumbotron from '@/components/homepage/Jumbotron';
+import PageJumbotron from '@/components/shared/PageJumbotron';
 import give from '../../assets/giving/Giving.webp';
 
 export default function Giving() {
   return (
     <div>
       <div className="bg-primary ">
-        <Jumbotron title="GIVING" Image={give}></Jumbotron>
+        <PageJumbotron title="GIVING" Image={give} />
       </div>
       <GiveText />
       <Giveinfo />

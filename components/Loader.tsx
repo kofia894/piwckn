@@ -12,7 +12,7 @@ export const Loader = () => {
               className="object-cover w-full h-full z-10"
           />
         </div>
-        <h1 className="text-white font-Barlow">Loading ...</h1>
+        <h1 className="text-white font-Inter">Loading ...</h1>
     </div>
   )
 }
