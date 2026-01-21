@@ -2,37 +2,118 @@
 import React from "react"
 import Image from 'next/image'
 import { motion } from "motion/react";
-import wwa from '../../assets/AboutUs/whoweare.webp'
+
+import wwa1 from '../../assets/AboutUs/whoweare1.webp'
+import wwa2 from '../../assets/AboutUs/whoweare2.webp'
+import wwa3 from '../../assets/AboutUs/whoweare3.webp'
 
 export const Whoweare = () => {
   return (
-    <div className="z-10 bg-white lg:mt-72 lg:pb-72 rounded-b-[85px] md:justify-around h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white " >
-      <div className="z-20 lg:w-[50vw] lg:relative  flex flex-col items-center justify-center absolute content-center space-y-10 ">
-        <motion.h1
-          className="font-Inter text-bold text-6xl lg:text-8xl text-white lg:text-primary "
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          Who are we ?
-        </motion.h1>
-        <motion.p
-          className="italic leading-loose text-lg font-base text-center md:w-[80%] text-white lg:text-primary"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          A missionary wing of the Church of Pentecost, PIWC-KN is guided by the tenets outlined by the church. The Church of Pentecost deems our tenets or beliefs as one of the most critical aspects of our worship because it forms the basics of the Christian doctrine
-        </motion.p>
-      </div>
-      <div className="z-10 w-screen h-screen lg:w-[50vw] md:flex md:items-center md:justify-center lg:p-2 blur-[2px] brightness-[0.5] lg:brightness-100 lg:blur-[0.5px]" >
-          <Image
-              src={wwa}
-              alt=""
-              className="object-cover w-full h-full rounded-b-[50px] lg:rounded-[50px] z-10"
-          />
+    <div className="bg-white py-12 md:py-24 lg:py-44 px-4 md:px-10">
+      <div className="section">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center">
+          {/* Left - Text Content */}
+          <motion.div
+            className="lg:w-2/5 flex flex-col justify-center text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            {/* Heading */}
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary tracking-[-0.02em] leading-[1.1] mb-4 md:mb-6">
+              Who We Are
+            </h2>
+
+            {/* Description */}
+            <p className="text-gray-600 text-sm md:text-lg leading-relaxed">
+              A missionary wing of the Church of Pentecost, PIWC-KN is guided by the tenets outlined by the church. We are a vibrant community united in faith and love.
+            </p>
+          </motion.div>
+
+          {/* Right - Staggered Image Cards */}
+          <div className="lg:w-3/5 flex gap-2 md:gap-6 items-start w-full">
+            {/* First Card - Taller */}
+            <motion.div
+              className="w-1/3 mt-0"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            >
+              <div className="relative aspect-[3/4] rounded-xl md:rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src={wwa1}
+                  alt="Community worship"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 33vw, 20vw"
+                  className="object-cover"
+                />
+                {/* Label overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
+                  <span className="text-white text-xs md:text-sm font-medium">Community</span>
+                </div>
+              </div>
+              {/* Caption below - hidden on mobile */}
+              <div className="mt-3 md:mt-4 hidden md:block">
+                <h3 className="text-base md:text-lg font-semibold text-primary">PIWC Kaneshie</h3>
+                <p className="text-xs md:text-sm text-gray-500">A family united in faith</p>
+              </div>
+            </motion.div>
+
+            {/* Second Card - Shorter, offset down */}
+            <motion.div
+              className="w-1/3 mt-6 md:mt-16"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+            >
+              <div className="relative aspect-[3/4] rounded-xl md:rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src={wwa2}
+                  alt="Fellowship"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 33vw, 20vw"
+                  className="object-cover"
+                />
+                {/* Label overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
+                  <span className="text-white text-xs md:text-sm font-medium">Fellowship</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Third Card - Offset up */}
+            <motion.div
+              className="w-1/3 mt-2 md:mt-8"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            >
+              <div className="relative aspect-[3/4] rounded-xl md:rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src={wwa3}
+                  alt="Worship"
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 33vw, 20vw"
+                  className="object-cover"
+                />
+                {/* Label overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
+                  <span className="text-white text-xs md:text-sm font-medium">Worship</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   )

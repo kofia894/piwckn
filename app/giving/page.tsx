@@ -4,6 +4,7 @@ import GiveText from '@/components/GivingComponents/GiveText';
 import HTG from '@/components/GivingComponents/HTG';
 import Giveinfo from '@/components/GivingComponents/Giveinfo';
 import PageJumbotron from '@/components/shared/PageJumbotron';
+import Footer from '@/components/Footer'
 import give from '../../assets/giving/Giving.webp';
 
 export default function Giving() {
@@ -14,6 +15,7 @@ export default function Giving() {
       </div>
       <GiveText />
       <Giveinfo />
+      <Footer />
     </div>
   )
 }

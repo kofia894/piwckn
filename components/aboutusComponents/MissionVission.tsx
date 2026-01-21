@@ -2,74 +2,95 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "motion/react";
+
 import mission from '../../assets/AboutUs/mission.jpg'
 import vision from '../../assets/AboutUs/vision.jpg'
 
 export const MissionVission = () => {
   return (
-    <div className='lg:section'>
-      <div className="  lg:section md:justify-around h-screen w-screen flex flex-col md:flex-row md:content-center items-center justify-center lg:m-24">
-        <div className="lg:max-w-[50vw] lg:relative lg:flex flex-col items-center justify-center absolute grid content-center">
-          <motion.h1
-            className='z-40 mb-4 lg:text-9xl text-5xl font-Inter font-extrabold text-center lg:text-primary text-white'
+    <div className="bg-white py-28 md:py-40 lg:py-52 my-8 md:my-12 lg:my-16 overflow-hidden">
+      <div className="section px-4 md:px-10">
+        <div className="flex items-center justify-between gap-6 md:gap-12 lg:gap-16">
+          {/* Left Image - pushed towards top */}
+          <motion.div
+            className="hidden md:block w-1/4 flex-shrink-0 self-start -mt-8 lg:-mt-16"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <div className="relative aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg">
+              <Image
+                src={mission}
+                alt="Our Mission"
+                fill
+                loading="lazy"
+                sizes="25vw"
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
+
+          {/* Center Content */}
+          <motion.div
+            className="flex-1 text-center py-8 md:py-16 lg:py-20 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            Our Mission
-          </motion.h1>
-          <motion.h2
-            className="z-40 mb-4 lg:text-3xl text-xl font-light text-center text-white lg:text-primary italic px-3 lg:w-[80%]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
+            {/* Decorative diamond */}
+            <div className="flex justify-center mb-8 md:mb-10">
+              <div className="w-3 h-3 bg-primary rotate-45" />
+            </div>
+
+            {/* Mission Section */}
+            <div className="mb-12 md:mb-16 lg:mb-20">
+              <span className="text-xs uppercase tracking-wider text-secondary font-semibold mb-4 block">
+                Our Mission
+              </span>
+              <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-900 leading-relaxed">
+                We exist to <span className="italic">establish</span> a responsible and self-sustaining church filled with committed, Spirit-filled Christians of sound character, who will <span className="italic">impact</span> their communities.
+              </p>
+            </div>
+
+            {/* Divider */}
+            <div className="flex items-center justify-center gap-4 mb-12 md:mb-16 lg:mb-20">
+              <div className="w-16 md:w-24 h-px bg-gray-200" />
+              <div className="w-2 h-2 bg-gray-300 rounded-full" />
+              <div className="w-16 md:w-24 h-px bg-gray-200" />
+            </div>
+
+            {/* Vision Section */}
+            <div>
+              <span className="text-xs uppercase tracking-wider text-secondary font-semibold mb-4 block">
+                Our Vision
+              </span>
+              <p className="text-xl md:text-2xl lg:text-3xl font-light text-gray-900 leading-relaxed">
+                To become a <span className="italic">global</span> Pentecostal church that is culturally relevant in vibrant evangelism, church planting and <span className="italic">holistic</span> ministry.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Right Image - pushed towards bottom */}
+          <motion.div
+            className="hidden md:block w-1/4 flex-shrink-0 self-end -mb-8 lg:-mb-16"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            "We exist to establish a responsible and self-sustaining church filled with committed,
-            Spirit-filled Christians of sound character, who will impact their communities
-            "
-          </motion.h2>
-        </div>
-        <div className=" w-screen h-screen lg:w-[50vw] md:flex md:items-center md:justify-center blur-[2px] brightness-[0.5] lg:brightness-100 lg:blur-none relative" >
-          <Image
-            src={mission}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            className="object-cover lg:rounded-[50px] "
-          />
-        </div>
-      </div>
-      <div className="lg:section md:justify-around h-screen w-screen flex flex-col md:flex-row-reverse md:content-center items-center justify-center lg:my-24">
-        <div className="lg:max-w-[50vw] lg:relative lg:flex flex-col items-center justify-center absolute grid content-center">
-          <motion.h1
-            className='z-40 mb-4 lg:text-7xl text-5xl  font-Inter font-extrabold text-center lg:text-primary text-white'
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            Our Vision
-          </motion.h1>
-          <motion.h2
-            className="z-40 mb-4 lg:text-3xl text-xl font-light text-center text-white lg:text-primary italic px-3 lg:w-[80%]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            "To become a global Pentecostal church that is culturally relevant in vibrant evangelism, church planting and holistic ministry"
-          </motion.h2>
-        </div>
-        <div className=" w-screen h-screen lg:w-[50vw] md:flex md:items-center md:justify-center relative blur-[2px] brightness-[0.5] lg:brightness-100 lg:blur-none" >
-          <Image
-            src={vision}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            className="object-cover lg:rounded-[50px]"
-          />
+            <div className="relative aspect-[3/4] rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg">
+              <Image
+                src={vision}
+                alt="Our Vision"
+                fill
+                loading="lazy"
+                sizes="25vw"
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

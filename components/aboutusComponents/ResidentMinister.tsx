@@ -8,7 +8,7 @@ export default function ResidentMinister(){
     return(
         <>
             <div className="lg:rounded-b-[85px] w-full h-full">
-                <div className="lg:rounded-b-[85px] min-h-[80vh] md:min-h-screen flex flex-row justify-around lg:content-center text-white bg-slate-900 pt-32">
+                <div className="lg:rounded-b-[85px] min-h-[80vh] md:min-h-screen flex flex-row justify-around lg:content-center text-white  pt-32">
 
                     <div className="text grid flex-col place-content-center w-[72%] lg:space-y-10 space-y-5 pl-6 lg:pl-1">
 
