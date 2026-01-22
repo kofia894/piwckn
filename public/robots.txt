@@ -1,0 +1,16 @@
+# robots.txt for PIWC Kaneshie - Church of Pentecost
+# https://piwckaneshie.org
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://piwckaneshie.org/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block access to admin or private areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

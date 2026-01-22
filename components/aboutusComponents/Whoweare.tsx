@@ -9,7 +9,7 @@ import wwa3 from '../../assets/AboutUs/whoweare3.webp'
 
 export const Whoweare = () => {
   return (
-    <div className="bg-white py-12 md:py-24 lg:py-44 px-4 md:px-10">
+    <div className="bg-white min-h-[70vh] md:min-h-0 py-24 md:py-24 lg:py-44 px-4 md:px-10 flex items-center">
       <div className="section">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center">
           {/* Left - Text Content */}

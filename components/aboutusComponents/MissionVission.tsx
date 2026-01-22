@@ -3,8 +3,8 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from "motion/react";
 
-import mission from '../../assets/AboutUs/mission.jpg'
-import vision from '../../assets/AboutUs/vision.jpg'
+import mission from '../../assets/AboutUs/Mission.webp'
+import vision from '../../assets/AboutUs/Vision.webp'
 
 export const MissionVission = () => {
   return (

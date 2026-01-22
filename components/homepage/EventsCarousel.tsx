@@ -2,10 +2,12 @@
 import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { BsArrowRight, BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
-import Img1 from "../../assets/homePage/event.jpg";
-import Img2 from "../../assets/homePage/event1.jpg";
+import Img1 from "../../assets/homePage/event.png";
+import Img2 from "../../assets/homePage/event1.png";
+import Img3 from "../../assets/homePage/event2.png";
+
 
 export default function UpcomingEvents() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -31,14 +33,14 @@ export default function UpcomingEvents() {
       title: "Women's Fellowship",
       date: "April 5",
       location: "Fellowship Hall",
-      image: Img1,
+      image: Img3,
       category: "Fellowship"
     },
     {
       title: "Prayer & Worship Night",
       date: "Every Friday",
       location: "Main Auditorium",
-      image: Img2,
+      image: Img1,
       category: "Worship"
     },
   ];
@@ -143,26 +145,17 @@ export default function UpcomingEvents() {
                 }}
               >
                 {/* Image Container */}
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden mb-5">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-5">
                   <Image
                     src={event.image}
                     alt={event.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                  {/* Date on image */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-white/80 text-sm font-medium">
-                      {event.date}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-2">
+                {/* <div className="space-y-2">
                   <h3 className="text-xl font-semibold text-primary group-hover:text-primary/70 transition-colors">
                     {event.title}
                   </h3>
@@ -174,7 +167,7 @@ export default function UpcomingEvents() {
                       View <BsArrowRight size={14} />
                     </span>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>

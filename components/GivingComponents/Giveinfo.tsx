@@ -1,70 +1,150 @@
 "use client"
-import { Fragment, SetStateAction, useState } from "react";
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-} from "@material-tailwind/react";
-import { IoIosArrowUp } from 'react-icons/io';
-import Giving from './Giving';
+import { motion } from "motion/react";
+import { BsBank2 } from "react-icons/bs";
+import { FaMobileAlt } from "react-icons/fa";
+import { HiOutlineClipboardCopy, HiCheck } from "react-icons/hi";
+import { useState } from "react";
 
-function Icon({ id, open } : { id: any; open: any }) {
-    return (
-      <IoIosArrowUp       className={`${
-        id === open ? "rotate-180" : ""
-      } h-5 w-5 transition-transform`} />
-  
-    );
-}
-
-import React from "react";
-import Image from "next/image";
-import momo from "../../assets/giving/piwcmomo.png";
-import bank from "../../assets/giving/piwcbank.png";
+const paymentMethods = [
+  {
+    id: 1,
+    title: "Bank Transfer",
+    icon: BsBank2,
+    provider: "UMB Bank",
+    details: [
+      { label: "Account Name", value: "PIWC Kaneshie" },
+      { label: "Account Number", value: "0021012694013", copiable: true },
+      { label: "Branch", value: "Accra Main Branch" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Mobile Money",
+    icon: FaMobileAlt,
+    provider: "MTN Mobile Money",
+    details: [
+      { label: "Account Name", value: "PIWC Kaneshie" },
+      { label: "Account Number", value: "0593748212", copiable: true },
+      { label: "Reference", value: "Tithes / Offering" },
+    ],
+  },
+];
 
 export default function Giveinfo() {
-const [open, setOpen] = useState(0);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
-const handleOpen = (value: SetStateAction<number>) => {
-    setOpen(open === value ? 0 : value);
-};
+  const copyToClipboard = (text: string, id: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
   return (
-    <div>
-      <div className="section md:justify-around w-screen h-screen flex flex-col md:flex-row md:content-center items-center justify-center text-white">
-        <div className="w-[30%] lg:relative z-30 flex flex-col mb-10">
-          <h1 className="font-Inter lg:text-9xl md:text-7xl text-5xl font-black text-black">
-            OTHER WAYS{" "}
-          </h1>
-          <h1 className="font-Inter lg:text-9xl md:text-7xl text-5xl font-black text-black">
-            TO GIVE{" "}
-          </h1>
+    <section className="bg-gray-50 py-20 md:py-28 lg:py-36">
+      <div className="section px-4 md:px-10">
+        {/* Section Header */}
+        <motion.div
+          className="mb-12 md:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3 block">
+            Ways to Give
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tight">
+            How to Give
+          </h2>
+          <p className="mt-4 text-gray-600 max-w-2xl">
+            Choose your preferred method to support the ministry of PIWC Kaneshie.
+          </p>
+        </motion.div>
+
+        {/* Payment Methods Grid */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl">
+          {paymentMethods.map((method, index) => (
+            <motion.div
+              key={method.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+            >
+              {/* Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <method.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">{method.title}</h3>
+                  <p className="text-sm text-gray-500">{method.provider}</p>
+                </div>
+              </div>
+
+              {/* Details */}
+              <div className="space-y-4">
+                {method.details.map((detail, i) => {
+                  const copyId = `${method.id}-${i}`;
+                  const isCopied = copiedId === copyId;
+
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-center justify-between py-3 border-b border-gray-100 last:border-0"
+                    >
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-gray-400 font-medium mb-1">
+                          {detail.label}
+                        </p>
+                        <p className="text-gray-900 font-medium">{detail.value}</p>
+                      </div>
+                      {detail.copiable && (
+                        <button
+                          onClick={() => copyToClipboard(detail.value, copyId)}
+                          className={`p-2 rounded-lg transition-all duration-200 ${
+                            isCopied
+                              ? "bg-green-100 text-green-600"
+                              : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                          }`}
+                          title={isCopied ? "Copied!" : "Copy to clipboard"}
+                        >
+                          {isCopied ? (
+                            <HiCheck className="w-5 h-5" />
+                          ) : (
+                            <HiOutlineClipboardCopy className="w-5 h-5" />
+                          )}
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          ))}
         </div>
-        <div className="w-[50%] flex flex-col justify-items-center items-center space-y-16">
-          <Fragment>
-              { Giving.map((giving)=>
-              <Accordion open={open === giving.id} className="font-Inter md:text-2xl text-primary font-bold text-left" icon={<Icon id={giving.id} open={open} />}>
-                  <AccordionHeader onClick={() => handleOpen(giving.id)} className="font-Inter md:text-2xl text-primary font-bold text-left">
-                  {giving.title} 
-                  </AccordionHeader>
-                  <AccordionBody className="font-normal space-y-2 text-lg text-black pt-5">
-                  <div className="flex flex-col">
-                      {giving.desc}
-                  </div>
-                  <div>
-                      {giving.desc2}
-                  </div>
-                  <div> 
-                      {giving.desc3}
-                  </div>
-                  <div> 
-                      {giving.desc4}
-                  </div>
-                  </AccordionBody>
-              </Accordion>
-              )}
-          </Fragment>
-        </div>
+
+        {/* Additional Info */}
+        <motion.div
+          className="mt-12 md:mt-16 max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="bg-primary/5 rounded-2xl p-6 md:p-8 border border-primary/10">
+            <h4 className="text-lg font-semibold text-primary mb-3">
+              Important Note
+            </h4>
+            <p className="text-gray-600 leading-relaxed">
+              When making a transfer, please include your name and the purpose of your giving
+              (e.g., Tithes, Offering, Welfare, Building Fund) in the reference or description field.
+              This helps us properly allocate your generous contribution.
+            </p>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

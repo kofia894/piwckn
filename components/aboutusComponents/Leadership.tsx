@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import Image from 'next/image'
 import { motion } from "motion/react";
 
@@ -147,16 +146,18 @@ export default function Leadership() {
           </motion.div>
 
           {/* Right Column - Executives Grid */}
-          <div className="lg:w-3/5">
+          <motion.div
+            className="lg:w-3/5"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <div className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
-              {executives.map((item, index) => (
-                <motion.div
+              {executives.map((item) => (
+                <div
                   key={item.id}
-                  className="relative aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden group cursor-pointer will-change-transform"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  transition={{ duration: 0.4, delay: index * 0.03, ease: "easeOut" }}
+                  className="relative aspect-[2/3] rounded-lg md:rounded-xl overflow-hidden group cursor-pointer"
                 >
                   <Image
                     src={item.img}
@@ -164,25 +165,25 @@ export default function Leadership() {
                     fill
                     loading="lazy"
                     sizes="(max-width: 768px) 33vw, 25vw"
-                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                    className="object-cover"
                   />
 
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  {/* Text Content - animates up on hover */}
-                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                    <span className="text-white/70 text-[10px] font-medium uppercase tracking-wider mb-0.5 block group-hover:text-secondary transition-colors duration-300">
+                  {/* Text Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3">
+                    <span className="text-white/70 text-[10px] font-medium uppercase tracking-wider mb-0.5 block">
                       {item.role}
                     </span>
                     <h4 className="text-white text-xs md:text-sm font-semibold leading-tight">
                       {item.name}
                     </h4>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
